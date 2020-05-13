@@ -1,0 +1,776 @@
+/*GLOBAL*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 25px;
+    background-color: #fff;
+    color: #010101;
+    overflow-x: hidden;
+}
+
+body a {
+    text-decoration: none;
+}
+
+.modal {
+    display:none;
+}
+
+/*HEADER*/
+header {
+    width: 100%;
+    height: 100px;
+    padding-top: 15px;
+    padding-left: 15px;
+    background-color: #fff;
+    color: #414141;
+}
+
+.icon_menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999999;
+    cursor: pointer;
+    font-size: 30px;
+    color: #9c9c9c;
+}
+
+.favicon_bigscreen {
+    display: none;
+}
+
+.portrait_img_big_screen {
+    display: none;
+}
+
+.nom_artiste h1 {
+    font-family: 'Gelasio', serif;
+    letter-spacing: 0.08em;
+    font-size: 19px;
+    color: #010101;
+}
+
+.nom_artiste h2 {
+    font-size: 15px;
+    font-style: italic;
+}
+
+.menu-bigscreen {
+    display: none;
+}
+
+.picture_name_bigscreen {
+    display: none;
+}
+
+.menu-deroulant {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: all ease-in 0.2s;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.menu-deroulant.open {
+    height: 260px;
+    padding: 20px 0;
+    z-index: 999;
+    background-color: #9c9c9c;
+    transition: all ease-in 0.2s;
+}
+
+.menu-deroulant a {
+    padding: 10px 0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5em;
+}
+
+.menu-deroulant a:hover {
+    background-color: #d5d5d5;
+    color: #fff;
+}
+
+/*MAIN*/
+.portrait_img {
+    width:95%;
+    margin:0 auto;  
+}
+.portrait_img img {
+    width:100%;
+    height:auto;
+}
+#biographie h2,
+#scene h2,
+#photos h2,
+#contact h2 {
+    text-align: center;
+    color: #414141;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5em;
+    cursor: pointer;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+#biographie h3,
+#contact h3 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    font-family: 'Gelasio', serif;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/*section biographie*/
+#biographie {
+    padding-bottom:20px;
+}
+
+/*slider with pagination*/
+.slide_bio {
+    position: relative;
+    margin:0 auto;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: left 0.5s;
+}
+
+#fauxslider {
+    padding: 20px 50px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.slider-item {
+    position: absolute;
+    width: 100%;
+    text-align: justify;
+    padding: 20px 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-item1 {
+    top: 0;
+    left: 0;
+}
+
+.slider-item2 {
+    top: 0;
+    left: 100%;
+}
+
+.slider-item3 {
+    top: 0;
+    left: 200%;
+}
+
+.slider-item4 {
+    top: 0;
+    left: 300%;
+}
+
+.slider_nav_content {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: calc(50% - 15px);
+    z-index: 99;
+}
+
+.slider-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+    font-size: 40px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: #414141;
+}
+
+.fa-chevron-left:hover,
+.fa-chevron-right:hover {
+    color: #adadad;
+}
+
+#pagination {
+    position: absolute;
+    bottom: -90px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+}
+
+/*section scene*/
+#scene {
+    margin: 100px 10px 0;
+    text-align: center;
+    padding: 0 5px;
+    background-color: black;
+    color: #fff;
+}
+
+#scene h2 {
+    color: #fff;
+}
+
+#scene h3 {
+    font-family: 'Gelasio', serif;
+    font-size: 21px;
+    font-weight: 400;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    color: #adadad;
+}
+
+.scene .scene_date,
+.scene_content_hidden .scene .scene_date,
+.theatre .theatre_date {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f5f5f5;
+}
+
+.scene .scene_info,
+.scene_content_hidden .scene .scene_info,
+.theatre .theatre_info {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    color: #f5f5f5;
+}
+
+.scene .scene_place,
+.scene_content_hidden .scene .scene_place,
+.theatre .theatre_place {
+    font-style: italic;
+    font-size: 16px;
+}
+
+#scene .border {
+    border: solid 0.8px #414141;
+    width: 70%;
+    margin: 30px auto;
+}
+
+.scene_content_hidden {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: all ease-out 0.2s;
+}
+
+.scene_content_hidden.open {
+    height: auto;
+    padding-top:20px;
+    transition: all ease-out 0.2s;
+}
+
+.theatre.last_theatre {
+    padding-bottom: 50px;
+}
+
+/*button scene and theatre content*/
+.button,
+.button_close,
+.button_form {
+   width:200px;
+   margin:50px auto;
+    padding: 5px ;
+    background-color: #efefef;
+    border: 1px solid #efefef;
+    color: black;
+    -moz-border-radius: 5px ;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.button:hover,
+.button_close:hover,
+.button_form:hover {
+    background-color: #aaaaaa;
+    border: 1px solid #aaaaaa;
+    color: #fff;
+}
+.button i,
+.button_close i {
+    padding-right:5px;
+} 
+
+/*section photo*/
+.gallery_content {
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.img_rouge {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.img_rouge div {
+    width: 100%;
+}
+
+/*section contact*/
+#contact {
+    background-color: white;
+    color: #414141;
+    text-align: center;
+    margin:10px 10px;
+}
+
+#contact h4 {
+    font-family: 'Gelasio', serif;
+    font-size: 21px;
+    font-weight: 400;
+    padding-top: 20px;
+    font-style: italic;
+}
+
+#contact .adress {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+#contact div {
+    padding: 2px;
+}
+
+.form_container {
+    width:100%;
+    font-family: 'Gelasio', serif;
+    background-color: #d5d5d5;
+}
+
+.form_container .form_h3 {
+    margin:30px 0 30px;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+/*contact form*/
+.form_container {
+    width:100%;
+}
+
+#form {
+    width:90%;
+    margin:50px auto;
+}
+
+#form .row .input-field {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#form input, #form textarea,.button_form {
+    width:100%;
+    margin:10px 0;
+    padding:5px 5px;
+    border:#d5d5d5;
+    -moz-border-radius: 15px ;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#form textarea {
+    max-width: 100%;
+    height:150px;   
+}
+
+.button_form {
+    width:40%;
+    padding:5px 5px;  
+}
+
+#form input:focus, #form textarea:focus {
+    background-color: #efefef;
+}
+
+#form .row {
+    padding-bottom: 20px;
+}
+
+#form .row .input-field .comments {
+    color:red;
+    font-style: italic;
+    font-size:1em;
+}
+
+#form label {
+    font-size: 0.9em;
+}
+
+.thank-you {
+    background-color: #d5d5d5;
+    font-style: italic;
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+/*FOOTER*/
+footer {
+    font-size: 14px;
+    text-align: center;
+    background-color: #414141;
+    color: #fff;
+    padding: 20px 10px;
+}
+
+footer a {
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.favicon {
+    padding-bottom: 10px;
+}
+
+.favicon a {
+    font-size: 30px;
+    padding-right: 5px;
+}
+
+.nom_footer span {
+    text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 600px) {
+
+    /*HEADER*/
+    header {
+        padding-top: 25px;
+        padding-left: 40px;
+    }
+ 
+    /*MAIN*/
+    /*portrait img*/
+    .portrait_img {
+        width:89%;
+        margin:0 auto;  
+    }
+    
+    /*slide bio*/
+    .slide_bio {
+        margin-bottom:120px;
+    }
+
+    .slider-item {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .slider-item p {
+        width: 50%;
+        margin: 0 15px;
+    }
+
+    #pagination {
+        position: absolute;
+        bottom: -110px;
+    }
+
+    /*section scene and contact*/
+    #biographie,#scene,#contact {
+        width:89%;
+        margin:0 auto;
+    }
+    
+    /*gallery*/
+    .img_rouge,
+    .img_scene3_content,
+    .img_scene_content {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .img_rouge div,
+    .img_scene3_content div,
+    .img_scene_content div {
+        width: 45%;
+        margin: 2px 5px;
+    }
+
+    /*modal gallery*/
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99999;
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .modal .modal_content {
+        margin: 2% auto;
+        max-width: 320px;
+        max-height: 300px;
+    }
+    
+    .modal .cross_modal {
+        margin-left: 100%;
+    }
+    
+    .modal .cross_modal i {
+        color: white;
+        font-size: 20px;
+    } 
+
+    /*form*/
+    #form {
+        width:80%;
+        margin:60px auto 40px; 
+    }
+    
+    #form input {
+        width:50%;
+    }
+
+    #form textarea {
+        width:80%;
+    }
+    #form .button_form {
+        width:20%;
+    }
+
+    /*FOOTER*/
+    footer { 
+        margin-top:40px;
+    }   
+}
+
+
+@media screen and (min-width: 1000px) {
+
+    /*HEADER*/
+    header {
+        position: fixed;
+        display: block;
+        z-index: 999;
+        height: 80px;
+    }
+
+    .icon_menu {
+        display: none;
+    }
+
+    .menu-deroulant {
+        display: none;
+    }
+
+    .portrait_img {
+        display: none;
+    }
+
+    .nom_artiste {
+        display: none;
+    }
+
+    /*nav big screen*/
+    .nav_bigscreen {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .favicon_bigscreen {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding-right: 10px;
+        color: black;
+    }
+
+    .favicon_bigscreen h3 {
+        padding-right: 15px;
+        font-family: 'Gelasio', serif;
+        letter-spacing: 0.08em;
+        color: black;
+    }
+
+    .favicon_bigscreen a {
+        font-size: 25px;
+        padding-right: 10px;
+        color: #010101;
+    }
+
+    .favicon_bigscreen a:hover {
+        color: #adadad;
+    }
+
+    .menu-bigscreen,
+    .nom_artiste_bigscreen,
+    .portrait_img_big_screen {
+        display: block;
+    }
+
+    .menu-bigscreen {
+        padding-left: 15px; 
+    }
+    .menu-bigscreen a {
+        display: inline-block;
+        padding-right: 30px;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 0.5em;
+        color: black;
+    }
+
+    .menu-bigscreen a:after {
+        content: "";
+        display: block;
+        margin: 0 0px;
+        width: 0%;
+        padding-top: 10px;
+        border-bottom: 2px solid black;
+        transition: all 0.4s ease-out;
+    }
+
+    .menu-bigscreen a:hover:after,
+    .menu-bigscreen a.active:after {
+        width: 100%;
+    }
+
+    .nom_artiste_bigscreen {
+        width: 70%;
+        padding-top: 50px;
+        padding-left: 50px;
+        font-family: 'Gelasio', serif;
+        letter-spacing: 0.08em;
+        color: #010101;
+    }
+
+    .nom_artiste_bigscreen h1 {
+        font-size: 40px;
+    }
+
+    .nom_artiste_bigscreen h2 {
+        font-style: italic;
+        padding-top: 20px;
+        font-size: 20px;
+    }
+   
+    .picture_name_bigscreen {
+        display: flex;
+        flex-direction: row;
+        padding-top: 150px;
+    }
+
+    .portrait_img_big_screen {
+        width:60%;
+        height: auto;
+        padding-right: 50px;
+    }
+
+    /*MAIN*/
+    /*section*/
+    #biographie,
+    #photos,
+    #scene,
+    #contact {
+        padding-top: 30px;
+    }
+
+    #biographie h2,
+    #scene h2,
+    #photos h2,
+    #contact h2 {
+        font-size: 14px;
+    }
+
+    #biographie h2,#contact h2 {
+        padding-bottom: 50px;
+    }
+
+    /* section biographie slide bio*/
+    .slider-item {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .slider-item p {
+        width: 50%;
+        margin: 0 15px;
+    }
+
+    /* section photo gallery*/
+    .img_rouge,
+    .img_scene3_content,
+    .img_scene_content {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .img_rouge div,
+    .img_scene3_content div,
+    .img_scene_content div {
+        width: 30%;
+        margin: 2px 5px;
+    }
+
+    .modal .modal_content {
+        margin: 2% auto;
+        max-width: 320px;
+        max-height: 300px;
+    }
+    
+    /*FOOTER*/
+    footer {
+        margin-top:60px;
+    }
+}

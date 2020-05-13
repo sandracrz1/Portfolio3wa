@@ -1,0 +1,149 @@
+/*GLOBAL*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    font-size: 1.6em;
+    line-height: 25px;
+    color: #772590;
+ 
+}
+
+h1 {
+    margin:20px 0px 40px;
+    padding:20px 0;
+    background-color: rgba(225, 184, 245, 0.4);
+    text-align: center;
+    font-size: 2.5em;
+}
+
+ul {
+    background-color:  #ffffff;
+    display: flex;
+    flex-wrap: wrap ;
+  
+}
+
+ul li {
+ padding:15px 0px 15px 5px;
+   
+}
+
+ul li a {
+
+    width:20%;
+    font-size: 1.1em;
+    padding:10px 10px;
+    background-color: #772590;
+    color:#ffffff;
+    border-radius: 20px;  
+}
+
+ul li a:hover {
+
+    background-color: #e1b8f5;
+}
+
+.tabs_content {
+
+    margin:50px 0;
+}
+
+.tabs_pane {
+
+    padding:30px 5px;
+    background-color: #e1b8f5;
+    text-align: center;
+}
+
+
+/*Page admin*/
+.admin {
+
+    background-color: #e1b8f5;
+    padding:50px;
+    margin-bottom:40px;
+    border-radius: 10px;
+}
+
+.admin h2 {
+
+    font-size: 1.5em;
+    padding-bottom:15px;
+}
+
+.admin thead tr th {
+    padding:5px 15px;
+    font-style: italic;
+}
+
+.admin table td {
+
+    padding:5px 15px;
+}
+
+.admin .waves-effect {
+
+   font-size:10px;
+   margin:5px 5px;
+   background-color:#772590;
+   color:#ffffff;
+}
+
+.admin .waves-effect.buttView {
+
+    background-color:rgba(102,51,153, 0.2);
+    color: #ffffff;
+    font-weight: 600;  
+}
+
+.admin .waves-effect.buttMod {
+
+    background-color:rgba(102,51,153, 0.8);
+    color: #ffffff;
+    font-weight: 600;  
+}
+
+.admin .waves-effect.buttSup {
+
+    background-color :rgba(255,105,180, 0.8);
+    color: #ffffff;
+    font-weight: 600;  
+}
+
+.admin .waves-effect:hover,
+.admin .waves-effect.buttView:hover,
+.admin .waves-effect.buttMod:hover,
+.admin .waves-effect.buttSup:hover,
+.admin .waves-effect.waves-light.btn:hover,
+.admin .btn.waves-effect.waves-light:hover
+{
+    color:#772590;
+    background-color: #ffffff;
+}
+.comments,.suppItem {
+
+    color:red;
+    font-style: italic;
+}
+#image {
+
+    font-size:80%;
+}
+.updateShow {
+
+    margin-top:30px;
+}
+.admin .waves-effect.waves-light.ouiDelete {
+
+    background-color:  rgba(226, 106, 106, 1);
+}
+.admin .waves-effect.waves-light.nonDelete {
+
+    background-color: rgba(119,37,144, 0.6);
+}
