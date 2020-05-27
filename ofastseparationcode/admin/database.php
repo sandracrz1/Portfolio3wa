@@ -6,9 +6,8 @@ Class Database
     private static $dbName = "fastfood_code";
     private static $dbUser = "root";
     private static $dsUserPassWord = "";
-
     private static $connection = null;
-
+    
     public static function connect()
     {
         try

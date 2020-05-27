@@ -1,0 +1,18 @@
+<!-- Page de suppression d'un produit -->
+    <div class="container admin">
+        <div class="row">
+            <div class="col s12 m6 l6">
+                <h2>Supprimer un item</h2>
+                <form class="form" role="form" action="delete.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $id;?>">
+                    <p class="suppItem">Etes vous sûr de vouloir supprimer l'item ?</p>
+                    <br>
+                    <div class="form_action">
+                        <button class="btn waves-effect waves-light ouiDelete" type="submit" name="action">Oui</button>
+                        <a href="index.php"class="waves-effect waves-light btn nonDelete">Non</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> 
+  

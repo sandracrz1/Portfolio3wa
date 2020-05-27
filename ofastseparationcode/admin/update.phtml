@@ -1,0 +1,73 @@
+<!-- Page modification produits -->
+    <div class="container admin">
+        <div class="row">
+            <div class="col s12 m6 l6">
+                <h2>Modifier un item</h2>
+                <br>
+                <form class="form" role="form" action="<?php echo 'update.php?id='.$id; ?>" method="post" enctype="multipart/form-data">
+                    <div class="form_product">
+                        <label for="name">Nom:</label>
+                        <input type="text" id="name" name="name"  value="<?php echo $name; ?>">
+                        <p class="comments"><?php echo $name_error; ?></p>
+                    </div>
+                    <div class="form_product">
+                        <label for="description">Détails:</label>
+                        <input type="text" id="description" name="description"  value="<?php echo $description; ?>">
+                        <p class="comments"><?php echo $description_error; ?></p>
+                    </div>
+                    <div class="form_product">
+                        <label for="price">Prix (€):</label>
+                        <input type="number" step ="0.01" id="price" name="price"  value="<?php echo $price; ?>">
+                        <p class="comments"><?php echo $price_error; ?></p>
+                    </div>
+                    <div class="form_product">
+                        <label for="category">Catégorie:</label>
+                       <div class='input-field'>
+                            <select id="category" name="category">
+                                <option value="" disabled selected>Choose your option</option>
+                                <?php 
+                                    foreach( $rows as $row)
+                                    {
+                                        if($row['id'] == $category)
+                                        echo '<option selected = "selected" value ="' . $row['id'] . '">' . $row['name'] . '</option>';
+                                        else 
+                                        echo '<option = "selected" value ="' . $row['id'] . '">' . $row['name'] . '</option>';
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <p class="comments"><?php echo $category_error; ?></p>
+                    </div>
+                    <br>
+                    <div class="form_product">
+                        <label>Image:</label>
+                        <p><?php echo $image;?></p>
+                        <br>
+                        <label for="image">Sélectionner une photo:</label>
+                        <br>
+                        <input type="file" id="image" name="image">
+                        <p class="comments"><?php echo $image_error; ?></p>
+                    </div>
+                    <br>
+                    <div class="form_action">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Modifier</button>
+                        <a href="index.php"class="waves-effect waves-light btn">Retour</a>
+                    </div>
+                </form>
+            </div>
+            <div class ="col s12 m6 l6 updateShow">
+                <img src="<?php echo '../image/'. $image; ?>" alt="menuClassic">
+                <br>
+                <div><?php echo number_format((float) $price,2,'.',''). ' €' ; ?></div>
+                <br>
+                <div class="caption">
+                    <h2><?php echo $name; ?></h2>
+                    <br>
+                    <p><?php echo $description; ?></p>
+                    <br>
+                    <a href="#" class="waves-effect waves-light btn">Commander</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+  

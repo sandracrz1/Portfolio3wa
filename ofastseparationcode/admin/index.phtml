@@ -1,0 +1,41 @@
+<!-- Page d'accueil -->
+    <div class="container admin">
+        <div class="row">
+            <h2>Liste des produits</h2>
+            <a href="insert.php"class="waves-effect waves-light btn">Ajouter</a>
+            <table class="striped responsive-table">
+                <thead>
+                    <tr>
+                        <th>Noms</th>
+                        <th>Détails</th>
+                        <th>Prix</th>
+                        <th>Catégories</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                         foreach($items as $item)
+                            {
+                                echo '<tr>';
+                                echo '<td>'. $item['name'] .'</td>';
+                                echo'<td>'. $item['description'] .'</td>';
+                                echo'<td>' . number_format((float) $item['price'],2,'.','') .' €'.'</td>';
+                                echo'<td>'. $item['category'].'</td>';
+                                echo'<td class="button_td">';
+                                    echo '<a class="waves-effect waves-light btn-small buttView" href="view.php?id='. $item['id'] . '" >Voir</a>';
+                                    echo '<a class="waves-effect waves-light btn-small buttMod" href="update.php?id='. $item['id'] . '">Modifier</a>';
+                                    echo '<a class="waves-effect waves-light btn-small buttSup" href="delete.php?id='. $item['id'] . '">Supprimer</a>';
+                                echo '</td>';
+                                echo '</tr>';
+                            }                      
+                    ?>
+                </tbody>
+            </table>
+        </div>  
+    </div>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
